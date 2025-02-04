@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class Pallindrome{
+    public boolean Pallindrome(int x) {
+        int revnum=0;
+        int lastdigit;
+        int n=x;
+        while(x>0)
+        {
+            lastdigit=x%10;
+            x=x/10;
+            revnum=revnum*10+lastdigit;
+        }
+        if(revnum==n)
+        return true;
+        else
+        return false;
+        
+    }
+}
+class Main{
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter the number:");
+      int num=sc.nextInt();
+      Pallindrome p=new Pallindrome();
+      if(p.Pallindrome(num)){
+        System.out.println(num+" is a palindrome");
+        }else{
+        System.out.println(num+" is not a palindrome");
+  
+      }
+}}
