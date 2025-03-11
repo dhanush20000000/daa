@@ -1,0 +1,20 @@
+public class SumOfSubsets {
+    public static void findSubsetSums(int[] arr, int index, int currentSum) 
+        if (index == arr.length) {
+            System.out.println(currentSum);
+            return;
+        }
+
+     
+        findSubsetSums(arr, index + 1, currentSum + arr[index]);
+
+        
+        findSubsetSums(arr, index + 1, currentSum);
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3};
+        System.out.println("Subset Sums:");
+        findSubsetSums(arr, 0, 0);
+    }
+}
