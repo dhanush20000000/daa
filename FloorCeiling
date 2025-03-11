@@ -1,0 +1,44 @@
+public class FloorCeiling {
+     public static int findFloor(int[] arr, int target) {
+         int low = 0, high = arr.length - 1;
+         int floor = -1; // Default if no floor exists
+         int floor = -1; 
+ 
+         while (low <= high) {
+             int mid = low + (high - low) / 2;
+ 
+             if (arr[mid] <= target) { // Possible floor found
+             if (arr[mid] <= target) { 
+                 floor = arr[mid];
+                 low = mid + 1; // Move right to find the largest ≤ target
+                 low = mid + 1; 
+             } else {
+                 high = mid - 1;
+             }
+         }
+         return floor; // Largest element ≤ target
+         return floor;
+     }
+ 
+ public static int findCeiling(int[] arr, int target) {
+     int low = 0, high = arr.length - 1;
+     int ceiling = -1; // Default if no ceiling exists
+     int ceiling = -1; 
+ 
+     while (low <= high) {
+         int mid = low + (high - low) / 2;
+ 
+         if (arr[mid] >= target) { // Possible ceiling found
+         if (arr[mid] >= target) { 
+             ceiling = arr[mid];
+             high = mid - 1; // Move left to find the smallest ≥ target
+             high = mid - 1; 
+         } else {
+             low = mid + 1;
+         }
+     }
+     return ceiling; // Smallest element ≥ target
+     return ceiling; 
+ }
+     public static void main(String[] args) {
+         int[] arr = {1, 2, 4, 6, 10};
